@@ -140,19 +140,19 @@ Para manter o histórico do repositório **organizado e padronizado**, adotaremo
 <!-- MODELO DE AUTOR-->
 ## 🦸 Equipe
 
-**UX/UI**: [Nome do membro]
+**UX/UI**: Caio-Pimenta e yanxzwp
 
-**HTML**: [Nome do membro]
+**HTML**: Thorlara e Menorf
 
-**CSS**: [Nome do membro]
+**CSS**: Gabriel73-w e Thorlara
 
-**JavaScript**: [Nome do membro]
+**JavaScript**: CaueCalebe e yanxzwp
 
-**PHP**: [Nome do membro]
+**PHP**: CaueCalebe e Gabriel73-w
 
 **PostgreSQL**: [Nome do membro]
 
-**GitHub Manager**: [Seu nome]
+**GitHub Manager**: CaueCalebe e Menorf
 
 <!-- ---------------------------------------------------------------------- -->
 
