@@ -411,6 +411,11 @@ footer {
   margin-bottom: 5px;
 }
 
+.footer-column p a {
+  color: white;
+  text-decoration: none;
+}
+
 .social-icons {
   display: flex;
   gap: 10px;
@@ -427,3 +432,19 @@ footer {
 .social-icons img:hover {
   transform: scale(1.1);
 }
+
+/* ===== TÉCNICA STICKY FOOTER ===== */
+/* Aplica o layout flexível para as páginas de login e registro */
+.login-page,
+.register-page {
+  display: flex; /* Ativa o modo flexbox */
+  flex-direction: column; /* Organiza os itens em uma coluna (header, main, footer) */
+  min-height: 100vh; /* Garante que o body tenha no mínimo a altura da tela */
+}
+
+/* Faz o conteúdo principal crescer e ocupar o espaço vago */
+.login-page main,
+.register-page main {
+  flex-grow: 1; /* Pede para este elemento crescer e ocupar o espaço disponível */
+}
+
