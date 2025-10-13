@@ -11,56 +11,67 @@
 <body>
 
   <!-- Header -->
-  <header>
-    <div class="top-bar">
+<header>
+  <div class="top-bar">
+    <div class="logo">
       <h1>SUPLEMENTA+</h1>
-      <div class="actions">
-        <a href="#">Login</a>
-        <a href="#">Carrinho</a>
-      </div>
     </div>
 
-    <!-- Navbar -->
-    <nav>
-      <ul>
-        <li><a href="#">Categorias</a></li>
-        <li><a href="#">Ofertas</a></li>
-        <li><a href="#">Mais vendidos</a></li>
-        <li><a href="#">Novas chegadas</a></li>
-        <li><a href="#">Blog</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- Barra de pesquisa -->
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar suplementos, proteínas, vitaminas..." />
+      <button type="submit">🔍</button>
+    </div>
 
-  <!-- Banner -->
-  <section class="banner">
-    <img src="./assets/treino-academia.jpg" alt="Treino na academia">
+    <!-- Ações -->
+    <div class="actions">
+      <a href="./login.html">Login</a>
+      <a href="#">Carrinho 🛒</a>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href="#Categorias">Categorias</a></li>
+      <li><a href="#Recomendado-para-voce">Recomendado para você</a></li>
+      <li><a href="#Principais-Ofertas">Principais Ofertas</a></li>
+      <li><a href="#">Blog</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Banner -->
+<section class="banner">
+  <img src="./assets/treino-academia.jpg" alt="Treino na academia">
+  <div class="banner-content">
     <h2>Alimente seu potencial</h2>
     <button>Compre Agora</button>
-  </section>
+  </div>
+</section>
 
   <!-- Produtos principais -->
   <section class="main-products">
-    <h2>Principais Categorias</h2>
+    <h2 id="Categorias">Principais Categorias</h2>
     <div class="product-grid">
 
       <div class="product-card">
-        <img src="file:///C:/Users/anale/AppData/Local/Temp/d53ad3cf-86e0-483a-a3b7-0201edc594a5_tinified%20(2).zip.tinified%20(2).zip/body_whey_900g_343_1_a1d3a34efea60ab706200bc08b64af84_20240905105512.webp" alt="Whey Protein Isolate">
+        <img src="./assets/body_whey_900g.jpg" alt="Body Whey de 900g">
         <h3>Protein Powders</h3>
       </div>
 
       <div class="product-card">
-        <img src="c:\Users\anale\AppData\Local\Temp\5ec795be-2a1e-47c5-8ab5-a0298b56b3fa_tinified (2).zip.tinified (2).zip\goldisolate.jpg" alt="Whey Protein Isolate">
+        <img src="./assets/multivitaminico_vitalavo_bari.jpg" alt="Multivitaminico Vitalavo Bari">
         <h3>Vitamins & Wellness</h3>
       </div>
 
       <div class="product-card">
-        <img src="c:\Users\anale\OneDrive\Imagens\3d-render-of-pre-workout-powder-in-container-isolated-over-white-background-KJ9T6J.jpg" alt="Whey Protein Isolate">
+        <img src="./assets/owl_full_power_pre_treino_300_gramas.jpg" alt="Owl Full Power Pré Treino 300g">
         <h3>Pre-Workout</h3>
       </div>
 
       <div class="product-card">
-        <img src="c:\Users\anale\AppData\Local\Temp\b49404e1-c168-4147-b2cb-2d446df66cd4_tinified (3).zip.tinified (3).zip\images.jpe" alt="Whey Protein Isolate">
+        <img src="./assets/creatina-grow-up-100-pure.jpg" alt="Creatina Grow Up 100% pure">
         <h3>Muscle Growth</h3>
       </div>
 
@@ -69,41 +80,41 @@
 
   <!-- Recomendados -->
   <section class="recommended">
-    <h2>Recomendado para você</h2>
+    <h2 id="Recomendado-para-voce">Recomendado para você</h2>
     <div class="product-grid">
 
       <div class="product-card">
-        <img src="file:///C:/Users/anale/AppData/Local/Temp/868487d7-e7ba-4c6d-a9ab-94b66b03ec15_tinified%20(4).zip.tinified%20(4).zip/WellnessForever202211194853518.webp" alt="Whey Protein Isolate">
+        <img src="./assets/whey-100-isolado.jpg" alt="Whey Protein Isolate 100%">
         <h3>Whey Protein Isolate 100%</h3>
         <p>★★★★★</p>
         <span class="price">R$ 129,90</span>
       </div>
 
       <div class="product-card">
-        <img src="file:///C:/Users/anale/AppData/Local/Temp/fd67ae54-26ed-4b40-b820-18c26d9cabc8_tinified%20(5).zip.tinified%20(5).zip/trec-bcaa-g-force-1150-90-kaps001.webp" alt="BCAA G-Force">
+        <img src="./assets/bcaa-g-force.jpg" alt="BCAA G-Force">
         <h3>BCAA G-Force</h3>
         <p>★★★★★</p>
         <span class="price">R$ 99,90</span>
       </div>
 
       <div class="product-card">
-        <img src="c:\Users\anale\AppData\Local\Temp\fe478420-b3ed-4c7b-8b12-6326da7d08be_tinified (6).zip.tinified (6).zip\4712ROC507.png" alt="Multivitamin Daily">
-        <h3>Multivitamin Daily</h3>
+        <img src="./assets/multi-vitamin-with-iron.jpg" alt="Multi-Vitamin With Iron">
+        <h3>Multi-Vitamin With Iron</h3>
         <p>★★★★★</p>
         <span class="price">R$ 89,90</span>
       </div>
 
       <div class="product-card">
-        <img src="c:\Users\anale\AppData\Local\Temp\19b0a94e-81f5-4ec1-9f87-eff9ae81e7a9_tinified (7).zip.tinified (7).zip\Multi-Pack-60-Caps.png" alt="Multivitamin Daily Promoção">
-        <h3>Multivitamin Daily</h3>
+        <img src="./assets/pre-treino.jpg" alt="Multivitamin Daily Promoção">
+        <h3>Pasta de Amendoim Choco Mix com Whey Protain 250g</h3>
         <p>★★★★★</p>
         <span class="price">R$ 79,90 <small class="old-price">R$ 89,90</small></span>
         <span class="label sale">SALE</span>
       </div>
 
       <div class="product-card">
-        <img src="c:\Users\anale\AppData\Local\Temp\14a98aee-64bc-43ca-9d17-5293df113f30_tinified (8).zip.tinified (8).zip\ostrovit-creatine-monohydrate-500-g-orange-suppstation-5135.jpg" alt="Creatine Monohydrate">
-        <h3>Creatine Monohydrate</h3>
+        <img src="./assets/creatina-monohydratada.jpg" alt="Creatine Drive Nutrex Research 300g">
+        <h3>Creatine Drive Nutrex Research 300g</h3>
         <p>★★★★★</p>
         <span class="price">R$ 120,00</span>
       </div>
@@ -112,40 +123,40 @@
 
   <!-- Principais Ofertas -->
   <section>
-    <h2>Principais Ofertas</h2>
+    <h2 id="Principais-Ofertas">Principais Ofertas</h2>
     <div class="product-grid">
 
       <div class="product-card">
-        <img src="assets/multivitamin-daily.jpg" alt="Multivitamin Daily">
-        <h3>Whey Protein 1kg - 20% OFF</h3>
+        <img src="./assets/whey-protein-pro-max-titanium-po-baunilha.jpg" alt="Whey Protein Pró Max Titanium Sabor Baunilha 1kg">
+        <h3>Whey Protein Pró Max Titanium Sabor Baunilha 1kg - 20% OFF</h3>
         <p>★★★★★</p>
-        <span class="price">R$ 99,99</span>
+        <span class="price">R$ 100,00<small class="old-price">R$ 125,00</small></span>
       </div>
 
       <div class="product-card">
-        <img src="assets/multivitamin-daily.jpg" alt="Multivitamin Daily">
-        <h3>Creatina Monohidratada 300g - Frete Grátis</h3>
+        <img src="./assets/creatina-po-max-titanium.jpg" alt="Creatina Max Titanium 300g">
+        <h3>Creatina Max Titanium 300g - Frete Grátis</h3>
         <p>★★★★★</p>
         <span class="price">R$ 85,00</span>
       </div>
 
       <div class="product-card">
-        <img src="assets/multivitamin-daily.jpg" alt="Multivitamin Daily">
-        <h3>Pré-Treino Hardcore - 15% OFF</h3>
+        <img src="./assets/s-a-w-capsules-glowne-YI.jpg" alt="Multivitamin Daily">
+        <h3>Pré-Treino S.A.W 120 Cápsulas - 15% OFF</h3>
         <p>★★★★★</p>
-        <span class="price">R$ 80,25</span>
+        <span class="price">R$ 80,25<small class="old-price">R$ 94,41</small></span>
       </div>
 
       <div class="product-card">
-        <img src="assets/multivitamin-daily.jpg" alt="Multivitamin Daily">
-        <h3>Multivitamínico Premium - Leve 2 Pague 1</h3>
+        <img src="./assets/owl-vita-multivitaminico.jpg" alt="Multivitamin Daily">
+        <h3>Multivitamínico Owl Vita 60 Cápsulas - Leve 2 Pague 1</h3>
         <p>★★★★★</p>
-        <span class="price">R$ 110,00</span>
+        <span class="price">R$ 110,00<small class="old-price">R$ 220,00</small></span>
       </div>
 
       <div class="product-card">
-        <img src="assets/multivitamin-daily.jpg" alt="Multivitamin Daily">
-        <h3>BCAA 120 cápsulas - Desconto Progressivo</h3>
+        <img src="./assets/bcaa-3000.jpg" alt="BCAA 3000 Body Nutry 120 Cápsulas">
+        <h3>BCAA 3000 Body Nutry 120 Cápsulas</h3>
         <p>★★★★★</p>
         <span class="price">R$ 92,15</span>
       </div>
@@ -185,7 +196,7 @@
         <div class="social-icons">
           <img src="./assets/instagram.png" alt="icone do instagram">
           <img src="./assets/whatsapp.png" alt="icone do whatsapp">
-          <img src="./assets/facebook.png" alt="icone do facebook">
+          <img src="./assets/githubb.png" alt="icone do GitHub">
           <img src="./assets/gmail.png" alt="icone do Email">
         </div>
 
