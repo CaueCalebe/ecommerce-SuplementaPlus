@@ -147,10 +147,10 @@ nav a:hover {
   font-size: 16px;
   cursor: pointer;
   font-weight: bold;
-  transition: 0.3s;
+  transition: background-color 0.3s;
 }
 
-.banner button:hover {
+.banner-content button:hover {
   background-color: #e67e22;
 }
 
