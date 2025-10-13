@@ -25,6 +25,11 @@ header {
   flex-wrap: wrap;
   gap: 10px;
 }
+
+/* Centraliza o H1 na página de login/registro */
+.login-page .top-bar,
+.register-page .top-bar { /* Você pode adicionar a classe 'register-page' ao body do register.html se quiser mais especificidade */
+  justify-content: center;
 }
 
 .logo h1 {
