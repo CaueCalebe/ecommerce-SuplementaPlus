@@ -154,6 +154,44 @@ nav a:hover {
   background-color: #e67e22;
 }
 
+/* ===== ESTILOS DO BANNER ESPECÍFICO PARA PÁGINA DE LOGIN ===== */
+.login-page .banner img {
+  height: 250px; /* Altura menor, como na imagem */
+  filter: brightness(0.5);
+}
+
+.login-page .banner h2,
+.login-page .banner button {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.login-page .banner h2 {
+  top: 45%;
+  font-size: 32px;
+  margin: 0;
+}
+
+.login-page .banner button {
+  top: 65%;
+  background-color: #f39c12;
+  border: none;
+  padding: 10px 25px; /* Botão um pouco menor */
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.login-page .banner button:hover {
+  background-color: #e67e22;
+}
+
+
 /* ===== SEÇÕES DE PRODUTOS ===== */
 section {
   padding: 40px 60px;
