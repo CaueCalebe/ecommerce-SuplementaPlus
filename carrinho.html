@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./src/css/style.css">
+  <title>Carrinho | Suplementa+</title>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="top-bar">
+      <div class="logo">
+        <h1><a href="./index.html" style="color: white; text-decoration: none;">SUPLEMENTA+</a></h1>
+      </div>
+
+      <!-- Barra de pesquisa -->
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar suplementos, proteínas, vitaminas..." />
+        <button type="submit">🔍</button>
+      </div>
+
+      <!-- Ações -->
+      <div class="actions">
+        <a href="./login.html" id="authLink">Login</a>
+        <a href="./carrinho.html">Carrinho 🛒</a>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav>
+      <ul>
+        <li><a href="./index.html#Categorias">Categorias</a></li>
+        <li><a href="./index.html#Recomendado-para-voce">Recomendado para você</a></li>
+        <li><a href="./index.html#Principais-Ofertas">Principais Ofertas</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="cart-section">
+      <div class="cart-container">
+        <h2>Seu Carrinho de Compras</h2>
+        
+        <div id="cartEmpty" class="cart-empty" style="display: none;">
+          <p>Seu carrinho está vazio</p>
+          <a href="./index.html" class="btn-back">Continuar Comprando</a>
+        </div>
+
+        <div id="cartContent" style="display: none;">
+          <table class="cart-table">
+            <thead>
+              <tr>
+                <th>Produto</th>
+                <th>Preço</th>
+                <th>Quantidade</th>
+                <th>Subtotal</th>
+                <th>Ação</th>
+              </tr>
+            </thead>
+            <tbody id="cartItems">
+              <!-- Itens do carrinho serão adicionados aqui -->
+            </tbody>
+          </table>
+
+          <div class="cart-summary">
+            <div class="summary-item">
+              <span>Subtotal:</span>
+              <span id="subtotal">R$ 0,00</span>
+            </div>
+            <div class="summary-item">
+              <span>Frete:</span>
+              <span id="shipping">R$ 0,00</span>
+            </div>
+            <div class="summary-item total">
+              <span>Total:</span>
+              <span id="total">R$ 0,00</span>
+            </div>
+          </div>
+
+          <div class="cart-actions">
+            <a href="./index.html" class="btn-secondary">Continuar Comprando</a>
+            <button class="btn-primary" id="checkoutBtn">Finalizar Compra</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+
+      <!-- Coluna 1 -->
+      <div class="footer-column">
+        <h3>Institucional</h3>
+        <ul>
+          <li><a href="">Sobre Nós</a></li>
+          <li><a href="">Política de Privacidade</a></li>
+          <li><a href="">Termos de Uso</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 2 -->
+      <div class="footer-column">
+        <h3>Ajuda</h3>
+        <ul>
+          <li><a href="">Central de Suporte</a></li>
+          <li><a href="">Entrega e Frete</a></li>
+          <li><a href="">Devoluções</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 3 -->
+      <div class="footer-column">
+        <h3>Contato</h3>
+        <p>Email: <a href="">contato@suplementa.com</a></p>
+        <p>Tel: (21) 99765-6760</p>
+        <div class="social-icons">
+          <img src="./assets/instagram.png" alt="icone do instagram">
+          <img src="./assets/whatsapp.png" alt="icone do whatsapp">
+          <img src="./assets/githubb.png" alt="icone do GitHub">
+          <img src="./assets/gmail.png" alt="icone do Email">
+        </div>
+
+      </div>
+  </footer>
+
+  <script src="./src/js/api.js"></script>
+  <script src="./src/js/script.js"></script>
+
+</body>
+
+</html>
