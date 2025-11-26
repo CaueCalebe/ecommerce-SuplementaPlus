@@ -1,1 +1,26 @@
-<header> <div class="top-bar"> <h1>SUPLEMENTA+</h1> <div class="actions"> <?php if (isset($_SESSION['usuario_nome'])): ?> <span>Olá, <?= htmlspecialchars($_SESSION['usuario_nome']) ?>!</span> <a href="logout.php">Sair</a> <?php else: ?> <a href="login.php">Login</a> <a href="register.php">Registrar</a> <?php endif; ?> <a href="carrinho.php">Carrinho</a> </div> </div> <nav> <ul> <li><a href="index.php">Início</a></li> <li><a href="#">Ofertas</a></li> <li><a href="#">Novos Produtos</a></li> <li><a href="#">Contato</a></li> </ul> </nav> </header>
+<?php
+// Navbar - Menu de navegação
+?>
+<header>
+    <div class="top-bar">
+        <h1>SUPLEMENTA+</h1>
+        <div class="actions">
+            <?php if (isset($_SESSION['usuario_nome'])): ?>
+                <span>Olá, <?= htmlspecialchars($_SESSION['usuario_nome']) ?>!</span>
+                <a href="logout.php">Sair</a>
+            <?php else: ?>
+                <a href="login.php">Login</a>
+                <a href="register.php">Registrar</a>
+            <?php endif; ?>
+            <a href="carrinho.php">Carrinho</a>
+        </div>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.php">Início</a></li>
+            <li><a href="#">Ofertas</a></li>
+            <li><a href="#">Novos Produtos</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </nav>
+</header>
