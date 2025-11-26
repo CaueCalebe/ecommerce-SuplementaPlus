@@ -27,10 +27,12 @@
       <div class="auth-container">
         <h2>Acesse sua conta</h2>
 
-        <form action="login.php" method="POST">
-          <input type="text" name="email" placeholder="Username Email" required>
-          <input type="password" name="password" placeholder="Password" required>
+        <form id="loginForm">
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="password" name="password" placeholder="Senha" required>
           <button type="submit">Entrar</button>
+          <div id="loginError" class="error-message" style="display:none;"></div>
+          <div id="loginSuccess" class="success-message" style="display:none;"></div>
         </form>
 
         <div class="auth-links">
@@ -47,6 +49,7 @@
     </div>
   </footer>
 
+  <script src="./src/js/api.js"></script>
   <script src="./src/js/script.js"></script>
 
 </body>

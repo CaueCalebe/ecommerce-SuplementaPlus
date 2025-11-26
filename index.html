@@ -25,8 +25,8 @@
 
     <!-- Ações -->
     <div class="actions">
-      <a href="./login.html">Login</a>
-      <a href="#">Carrinho 🛒</a>
+      <a href="./login.html" id="authLink">Login</a>
+      <a href="./carrinho.html" id="carrinhoLink">Carrinho 🛒</a>
     </div>
   </div>
 
@@ -83,40 +83,45 @@
     <h2 id="Recomendado-para-voce">Recomendado para você</h2>
     <div class="product-grid">
 
-      <div class="product-card">
+      <div class="product-card" data-id="1" data-name="Whey Protein Isolate 100%" data-price="129.90">
         <img src="./assets/whey-100-isolado.jpg" alt="Whey Protein Isolate 100%">
         <h3>Whey Protein Isolate 100%</h3>
         <p>★★★★★</p>
         <span class="price">R$ 129,90</span>
+        <button class="add-to-cart">Adicionar ao Carrinho</button>
       </div>
 
-      <div class="product-card">
+      <div class="product-card" data-id="2" data-name="BCAA G-Force" data-price="99.90">
         <img src="./assets/bcaa-g-force.jpg" alt="BCAA G-Force">
         <h3>BCAA G-Force</h3>
         <p>★★★★★</p>
         <span class="price">R$ 99,90</span>
+        <button class="add-to-cart">Adicionar ao Carrinho</button>
       </div>
 
-      <div class="product-card">
+      <div class="product-card" data-id="3" data-name="Multi-Vitamin With Iron" data-price="89.90">
         <img src="./assets/multi-vitamin-with-iron.jpg" alt="Multi-Vitamin With Iron">
         <h3>Multi-Vitamin With Iron</h3>
         <p>★★★★★</p>
         <span class="price">R$ 89,90</span>
+        <button class="add-to-cart">Adicionar ao Carrinho</button>
       </div>
 
-      <div class="product-card">
+      <div class="product-card" data-id="4" data-name="Pasta de Amendoim Choco Mix com Whey Protain 250g" data-price="79.90">
         <img src="./assets/pre-treino.jpg" alt="Multivitamin Daily Promoção">
         <h3>Pasta de Amendoim Choco Mix com Whey Protain 250g</h3>
         <p>★★★★★</p>
         <span class="price">R$ 79,90 <small class="old-price">R$ 89,90</small></span>
         <span class="label sale">SALE</span>
+        <button class="add-to-cart">Adicionar ao Carrinho</button>
       </div>
 
-      <div class="product-card">
+      <div class="product-card" data-id="5" data-name="Creatine Drive Nutrex Research 300g" data-price="120.00">
         <img src="./assets/creatina-monohydratada.jpg" alt="Creatine Drive Nutrex Research 300g">
         <h3>Creatine Drive Nutrex Research 300g</h3>
         <p>★★★★★</p>
         <span class="price">R$ 120,00</span>
+        <button class="add-to-cart">Adicionar ao Carrinho</button>
       </div>
     </div>
   </section>
@@ -126,39 +131,44 @@
     <h2 id="Principais-Ofertas">Principais Ofertas</h2>
     <div class="product-grid">
 
-      <div class="product-card">
+      <div class="product-card" data-id="6" data-name="Whey Protein Pró Max Titanium Sabor Baunilha 1kg" data-price="100.00">
         <img src="./assets/whey-protein-pro-max-titanium-po-baunilha.jpg" alt="Whey Protein Pró Max Titanium Sabor Baunilha 1kg">
         <h3>Whey Protein Pró Max Titanium Sabor Baunilha 1kg - 20% OFF</h3>
         <p>★★★★★</p>
         <span class="price">R$ 100,00<small class="old-price">R$ 125,00</small></span>
+        <button class="add-to-cart">Adicionar ao Carrinho</button>
       </div>
 
-      <div class="product-card">
+      <div class="product-card" data-id="7" data-name="Creatina Max Titanium 300g" data-price="85.00">
         <img src="./assets/creatina-po-max-titanium.jpg" alt="Creatina Max Titanium 300g">
         <h3>Creatina Max Titanium 300g - Frete Grátis</h3>
         <p>★★★★★</p>
         <span class="price">R$ 85,00</span>
+        <button class="add-to-cart">Adicionar ao Carrinho</button>
       </div>
 
-      <div class="product-card">
+      <div class="product-card" data-id="8" data-name="Pré-Treino S.A.W 120 Cápsulas" data-price="80.25">
         <img src="./assets/s-a-w-capsules-glowne-YI.jpg" alt="Multivitamin Daily">
         <h3>Pré-Treino S.A.W 120 Cápsulas - 15% OFF</h3>
         <p>★★★★★</p>
         <span class="price">R$ 80,25<small class="old-price">R$ 94,41</small></span>
+        <button class="add-to-cart">Adicionar ao Carrinho</button>
       </div>
 
-      <div class="product-card">
+      <div class="product-card" data-id="9" data-name="Multivitamínico Owl Vita 60 Cápsulas" data-price="110.00">
         <img src="./assets/owl-vita-multivitaminico.jpg" alt="Multivitamin Daily">
         <h3>Multivitamínico Owl Vita 60 Cápsulas - Leve 2 Pague 1</h3>
         <p>★★★★★</p>
         <span class="price">R$ 110,00<small class="old-price">R$ 220,00</small></span>
+        <button class="add-to-cart">Adicionar ao Carrinho</button>
       </div>
 
-      <div class="product-card">
+      <div class="product-card" data-id="10" data-name="BCAA 3000 Body Nutry 120 Cápsulas" data-price="92.15">
         <img src="./assets/bcaa-3000.jpg" alt="BCAA 3000 Body Nutry 120 Cápsulas">
         <h3>BCAA 3000 Body Nutry 120 Cápsulas</h3>
         <p>★★★★★</p>
         <span class="price">R$ 92,15</span>
+        <button class="add-to-cart">Adicionar ao Carrinho</button>
       </div>
 
   </div>
@@ -203,6 +213,7 @@
       </div>
   </footer>
 
+  <script src="./src/js/api.js"></script>
   <script src="./src/js/script.js"></script>
 
 </body>
