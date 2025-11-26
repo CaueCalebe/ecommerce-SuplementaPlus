@@ -1,1 +1,48 @@
-<?php session_start(); require_once '../../backend/config/db.php'; $error = ''; if ($_SERVER['REQUEST_METHOD'] === 'POST') { $email = $_POST['email']; $senha = $_POST['senha']; $stmt = $conn->prepare("SELECT * FROM usuarios WHERE email = :email"); $stmt->bindValue(':email', $email); $stmt->execute(); $usuario = $stmt->fetch(PDO::FETCH_ASSOC); if ($usuario && password_verify($senha, $usuario['senha'])) { $_SESSION['usuario_id'] = $usuario['id']; $_SESSION['usuario_nome'] = $usuario['nome']; header('Location: index.php'); exit; } else { $error = 'Email ou senha incorretos.'; } } ?> <?php include 'includes/header.php'; ?> <?php include 'includes/navbar.php'; ?> <main> <section class="login-section"> <h2>Entrar</h2> <form method="POST"> <label>Email:</label> <input type="email" name="email" required> <label>Senha:</label> <input type="password" name="senha" required> <button type="submit">Entrar</button> <p>Ainda não tem conta? <a href="register.php">Cadastre-se</a></p> <?php if ($error): ?> <p class="error"><?= $error ?></p> <?php endif; ?> </form> </section> </main> <?php include 'includes/footer.php'; ?>
+<?php
+// Configurar output antes de qualquer coisa
+error_reporting(0);
+ini_set('display_errors', 0);
+
+// Define headers antes de qualquer output
+header('Content-Type: application/json; charset=utf-8');
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: POST');
+header('Access-Control-Allow-Headers: Content-Type');
+
+// Caminho absoluto para evitar erros
+$base_dir = dirname(dirname(dirname(__FILE__)));
+require_once $base_dir . '/backend/config/db.php';
+require_once $base_dir . '/backend/models/Usuario.php';
+
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    echo json_encode(['success' => false, 'message' => 'Método não permitido']);
+    exit;
+}
+
+$email = trim($_POST['email'] ?? '');
+$password = $_POST['password'] ?? '';
+
+// Validações básicas
+if (empty($email) || empty($password)) {
+    echo json_encode(['success' => false, 'message' => 'Email e senha são obrigatórios']);
+    exit;
+}
+
+// Verificar conexão com BD
+if ($conn === null) {
+    http_response_code(500);
+    echo json_encode(['success' => false, 'message' => 'Erro de conexão com banco de dados']);
+    exit;
+}
+
+try {
+    $usuario = new Usuario($conn);
+    $resultado = $usuario->login($email, $password);
+    
+    echo json_encode($resultado);
+} catch (Exception $e) {
+    http_response_code(500);
+    echo json_encode(['success' => false, 'message' => 'Erro no servidor: ' . $e->getMessage()]);
+}
+
+exit;

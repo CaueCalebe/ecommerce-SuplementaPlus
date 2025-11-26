@@ -1,1 +1,80 @@
-<?php session_start(); require_once '../../backend/config/db.php'; // Inicializa o carrinho if (!isset($_SESSION['carrinho'])) { $_SESSION['carrinho'] = []; } // Adicionar item if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['produto_id'])) { $produto_id = $_POST['produto_id']; $_SESSION['carrinho'][] = $produto_id; } // Buscar dados dos produtos do carrinho $ids = implode(',', $_SESSION['carrinho']); $produtos = []; if ($ids) { $stmt = $conn->query("SELECT * FROM produtos WHERE id IN ($ids)"); $produtos = $stmt->fetchAll(PDO::FETCH_ASSOC); } ?> <?php include 'includes/header.php'; ?> <?php include 'includes/navbar.php'; ?> <main> <section class="carrinho"> <h2>Seu Carrinho</h2> <?php if (empty($produtos)): ?> <p>Seu carrinho está vazio.</p> <?php else: ?> <ul> <?php foreach ($produtos as $p): ?> <li> <img src="../../assets/<?= htmlspecialchars($p['imagem']) ?>" width="80"> <?= htmlspecialchars($p['nome']) ?> - R$ <?= number_format($p['preco'], 2, ',', '.') ?> </li> <?php endforeach; ?> </ul> <button>Finalizar Compra</button> <?php endif; ?> </section> </main> <?php include 'includes/footer.php'; ?>
+<?php
+header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: POST, GET');
+header('Access-Control-Allow-Headers: Content-Type');
+
+require_once '../../backend/config/db.php';
+require_once '../../backend/models/Carrinho.php';
+require_once '../../backend/models/Produto.php';
+
+$action = $_GET['action'] ?? '';
+
+try {
+    if ($action === 'checkout') {
+        // Processar checkout
+        $user_id = $_POST['user_id'] ?? null;
+        $items_json = $_POST['items'] ?? '[]';
+        
+        // Decodificar items
+        $cart_items = json_decode($items_json, true);
+
+        if (!$user_id || empty($cart_items)) {
+            echo json_encode(['success' => false, 'message' => 'Dados inválidos para checkout']);
+            exit;
+        }
+        
+        // Move this method outside the try block and class Produto if necessary
+
+        // Validar cada item
+        $produto = new Produto($conn);
+        $total = 0;
+        
+        foreach ($cart_items as $item) {
+            if (!isset($item['id']) || !isset($item['price']) || !isset($item['quantidade'])) {
+                echo json_encode(['success' => false, 'message' => 'Formato de item inválido']);
+                exit;
+            }
+            
+            // Verificar se produto existe
+            $produtoData = $produto->buscarPorId($item['id']);
+            if (!$produtoData) {
+                echo json_encode(['success' => false, 'message' => 'Produto ID ' . $item['id'] . ' não encontrado']);
+                exit;
+            }
+            
+            // Verificar estoque
+            if (!$produto->verificarEstoque($item['id'], $item['quantidade'])) {
+                echo json_encode(['success' => false, 'message' => 'Estoque insuficiente para ' . $produtoData['nome']]);
+                exit;
+            }
+            
+            $total += $item['price'] * $item['quantidade'];
+        }
+        
+        // Adicionar frete
+        $total += 10.00;
+
+        // Criar pedido
+        $carrinho = new Carrinho($conn);
+        $resultado = $carrinho->criarPedido($user_id, $cart_items, $total);
+        
+        // Se sucesso, atualizar estoque
+        if ($resultado['success']) {
+            foreach ($cart_items as $item) {
+                $produto->atualizarEstoque($item['id'], $item['quantidade']);
+            }
+        }
+        
+        echo json_encode($resultado);
+        
+    } elseif ($action === 'get') {
+        // Retornar carrinho (gerenciado pelo frontend)
+        echo json_encode(['success' => true, 'message' => 'Carrinho gerenciado pelo localStorage']);
+        
+    } else {
+        echo json_encode(['success' => false, 'message' => 'Ação não reconhecida']);
+    }
+} catch (Exception $e) {
+    echo json_encode(['success' => false, 'message' => 'Erro no servidor: ' . $e->getMessage()]);
+}

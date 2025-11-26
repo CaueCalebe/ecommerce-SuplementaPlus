@@ -1,1 +1,4 @@
-<?php session_start(); session_destroy(); header('Location: login.php'); exit;
+<?php
+header('Content-Type: application/json');
+echo json_encode(['success' => true, 'message' => 'Logout realizado com sucesso']);
+?>
