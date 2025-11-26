@@ -1,7 +1,3 @@
-├── controllers/
-│   ├── authController.php
-│   └── produtoController.php
-```php
 <?php
 class Usuario {
     private $conn;
@@ -20,3 +16,6 @@ class Usuario {
         $stmt->bindParam(':senha', $senha_hash);
 
         return $stmt->execute();
+    }
+}
+?>

@@ -1,10 +1,3 @@
-├── controllers/
-│   ├── authController.php
-│   └── produtoController.php
- models/
-    ├── Usuario.php
-    └── Produto.php
-php
 <?php
 class Produto {
     private $conn;

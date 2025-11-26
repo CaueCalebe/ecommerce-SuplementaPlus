@@ -1,7 +1,3 @@
-├── controllers/
-│   ├── authController.php
-│   └── produtoController.php
-```php
 <?php
 require_once '../config/db.php';
 require_once '../models/Produto.php';
@@ -18,3 +14,5 @@ if ($acao === 'listar') {
 if ($acao === 'buscar' && isset($_GET['id'])) {
     $p = $produto->buscarPorId($_GET['id']);
     echo json_encode($p);
+}
+?>
