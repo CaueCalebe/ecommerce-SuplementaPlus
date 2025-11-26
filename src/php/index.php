@@ -1,1 +1,29 @@
-<?php include 'includes/header.php'; ?> <?php include 'includes/navbar.php'; ?> <main> <section class="banner"> <img src="../../assets/treino-academia.jpg" alt="Treino na academia"> <div class="banner-content"> <h2>Alimente seu potencial</h2> <button>Compre Agora</button> </div> </section> <section class="products"> <h2>Produtos Disponíveis</h2> <div class="product-grid"> <?php foreach ($produtos as $produto): ?> <div class="product-card"> <img src="../../assets/<?= htmlspecialchars($produto['imagem']) ?>" alt="<?= htmlspecialchars($produto['nome']) ?>"> <h3><?= htmlspecialchars($produto['nome']) ?></h3> <p><?= htmlspecialchars($produto['descricao']) ?></p> <span class="price">R$ <?= number_format($produto['preco'], 2, ',', '.') ?></span> <form action="carrinho.php" method="POST"> <input type="hidden" name="produto_id" value="<?= $produto['id'] ?>"> <button type="submit">Adicionar ao carrinho</button> </form> </div> <?php endforeach; ?> </div> </section> </main> <?php include 'includes/footer.php'; ?>
+<?php
+header('Content-Type: application/json; charset=utf-8');
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST');
+header('Access-Control-Allow-Headers: Content-Type');
+
+require_once '../../backend/config/db.php';
+
+// Buscar produtos do banco de dados
+$produtos = [];
+try {
+    $stmt = $conn->query("SELECT id, nome, descricao, preco, imagem FROM produtos ORDER BY id ASC");
+    $produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+    // Formatar resposta
+    echo json_encode([
+        'success' => true,
+        'data' => $produtos,
+        'total' => count($produtos)
+    ]);
+} catch (PDOException $e) {
+    http_response_code(500);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Erro ao buscar produtos: ' . $e->getMessage()
+    ]);
+}
+
+exit;
